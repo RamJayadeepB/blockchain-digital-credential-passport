@@ -1,0 +1,199 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "date": "2026-11-15T17:53:41.890Z",
+  "runs": 10,
+  "deployGas": {
+    "IssuerRegistry": 3794399,
+    "CredentialRegistry": 2503901
+  },
+  "issue": {
+    "gas": {
+      "n": 10,
+      "mean": 257076.4,
+      "min": 257056,
+      "max": 257080,
+      "median": 257080
+    },
+    "confirmMs": {
+      "n": 10,
+      "mean": 17020.53,
+      "min": 4111.96,
+      "max": 36144.05,
+      "median": 12041.46
+    },
+    "feeEth": {
+      "n": 10,
+      "mean": 4.216052e-12,
+      "min": 4.113088e-12,
+      "max": 4.37036e-12,
+      "median": 4.11328e-12
+    },
+    "gasPriceGwei": {
+      "n": 10,
+      "mean": 1.64e-8,
+      "min": 1.6e-8,
+      "max": 1.7e-8,
+      "median": 1.6e-8
+    }
+  },
+  "revoke": {
+    "gas": {
+      "n": 5,
+      "mean": 42371.6,
+      "min": 42362,
+      "max": 42374,
+      "median": 42374
+    },
+    "confirmMs": {
+      "n": 5,
+      "mean": 11756.81,
+      "min": 11409.86,
+      "max": 12011.75,
+      "median": 11943.47
+    },
+    "feeEth": {
+      "n": 5,
+      "mean": 7.20317e-13,
+      "min": 7.20154e-13,
+      "max": 7.20358e-13,
+      "median": 7.20358e-13
+    }
+  },
+  "verify": {
+    "validMs": {
+      "n": 10,
+      "mean": 169.81,
+      "min": 152.5,
+      "max": 226.1,
+      "median": 166.6
+    },
+    "revokedMs": {
+      "n": 5,
+      "mean": 161.68,
+      "min": 152.5,
+      "max": 172.2,
+      "median": 160.1
+    },
+    "costEth": 0
+  },
+  "signMs": {
+    "n": 10,
+    "mean": 10.46,
+    "min": 1.4,
+    "max": 87.98,
+    "median": 2.02
+  },
+  "payload": {
+    "jwtChars": {
+      "n": 10,
+      "mean": 854,
+      "min": 854,
+      "max": 854,
+      "median": 854
+    },
+    "qrChars": {
+      "n": 10,
+      "mean": 883,
+      "min": 883,
+      "max": 883,
+      "median": 883
+    }
+  },
+  "onChainBytesPerCredential": 64,
+  "detection": {
+    "tampered": {
+      "total": 20,
+      "detected": 20
+    },
+    "forgedIssuer": {
+      "total": 5,
+      "detected": 5
+    },
+    "revoked": {
+      "total": 5,
+      "detected": 5
+    },
+    "genuine": {
+      "total": 5,
+      "accepted": 5
+    }
+  },
+  "transactions": [
+    {
+      "action": "issue",
+      "hash": "0x8145cf0c5c226bd694ade41c1cfd78d780f50e570fed472eea28332b6f8ba337",
+      "link": "https://sepolia.etherscan.io/tx/0x8145cf0c5c226bd694ade41c1cfd78d780f50e570fed472eea28332b6f8ba337"
+    },
+    {
+      "action": "issue",
+      "hash": "0xffa3ae720c3ee93bc1fd7aaf84ba45239ce6de932d470502a755c17cb4266110",
+      "link": "https://sepolia.etherscan.io/tx/0xffa3ae720c3ee93bc1fd7aaf84ba45239ce6de932d470502a755c17cb4266110"
+    },
+    {
+      "action": "issue",
+      "hash": "0x0d1c39c65869b435002eec90eda340fd5d9b831ec6cae97a1ec3aafed8d26e64",
+      "link": "https://sepolia.etherscan.io/tx/0x0d1c39c65869b435002eec90eda340fd5d9b831ec6cae97a1ec3aafed8d26e64"
+    },
+    {
+      "action": "issue",
+      "hash": "0xdc800f973b008a5d24ab8edb601edc2bfe935dc88fb13dfc2116139c24e5186d",
+      "link": "https://sepolia.etherscan.io/tx/0xdc800f973b008a5d24ab8edb601edc2bfe935dc88fb13dfc2116139c24e5186d"
+    },
+    {
+      "action": "issue",
+      "hash": "0x007c3f8e13afef32c37fdf818f7d2d94d156c4541ccb631b43a488bd7be7f854",
+      "link": "https://sepolia.etherscan.io/tx/0x007c3f8e13afef32c37fdf818f7d2d94d156c4541ccb631b43a488bd7be7f854"
+    },
+    {
+      "action": "issue",
+      "hash": "0x588a8a02ecf8d225f3be3c12a3bd16c73e2b40e1dcad49345a7bdb68484c5e09",
+      "link": "https://sepolia.etherscan.io/tx/0x588a8a02ecf8d225f3be3c12a3bd16c73e2b40e1dcad49345a7bdb68484c5e09"
+    },
+    {
+      "action": "issue",
+      "hash": "0x43b3c134d8a04ea009f0f4230aabac2d388438ddc3894c752b99dfe1efe6afc7",
+      "link": "https://sepolia.etherscan.io/tx/0x43b3c134d8a04ea009f0f4230aabac2d388438ddc3894c752b99dfe1efe6afc7"
+    },
+    {
+      "action": "issue",
+      "hash": "0xa01722982f11cc2cd7925c7a6b3d57d4356372be1ed687a16f1be48affb0c121",
+      "link": "https://sepolia.etherscan.io/tx/0xa01722982f11cc2cd7925c7a6b3d57d4356372be1ed687a16f1be48affb0c121"
+    },
+    {
+      "action": "issue",
+      "hash": "0xcab7df628d9ef1d7fb4ecdc6ec7d4e0d73fb24626e683568933ec88abcdf4ef3",
+      "link": "https://sepolia.etherscan.io/tx/0xcab7df628d9ef1d7fb4ecdc6ec7d4e0d73fb24626e683568933ec88abcdf4ef3"
+    },
+    {
+      "action": "issue",
+      "hash": "0xdbf671ffc041fe36be5d9246adb5d0bc41df84c19fab7fa83ea08ecbbf5b430b",
+      "link": "https://sepolia.etherscan.io/tx/0xdbf671ffc041fe36be5d9246adb5d0bc41df84c19fab7fa83ea08ecbbf5b430b"
+    },
+    {
+      "action": "revoke",
+      "hash": "0x335855aedba702a8a87f2d739cb7df354e7b1d28c259b9dfd2db7533afe8e925",
+      "link": "https://sepolia.etherscan.io/tx/0x335855aedba702a8a87f2d739cb7df354e7b1d28c259b9dfd2db7533afe8e925"
+    },
+    {
+      "action": "revoke",
+      "hash": "0xc85c2465fcc3ddea1143686a4722eb890e7514334f7d9807d19e5a717e3824e7",
+      "link": "https://sepolia.etherscan.io/tx/0xc85c2465fcc3ddea1143686a4722eb890e7514334f7d9807d19e5a717e3824e7"
+    },
+    {
+      "action": "revoke",
+      "hash": "0xe138fcd9e1420a7e0c0f89828581e69bc058a9388dd2420d8d690d4cfb46388e",
+      "link": "https://sepolia.etherscan.io/tx/0xe138fcd9e1420a7e0c0f89828581e69bc058a9388dd2420d8d690d4cfb46388e"
+    },
+    {
+      "action": "revoke",
+      "hash": "0x3b33a821ebd615bcd9c66745867200807430111475eb3e7c391b02caf88cd063",
+      "link": "https://sepolia.etherscan.io/tx/0x3b33a821ebd615bcd9c66745867200807430111475eb3e7c391b02caf88cd063"
+    },
+    {
+      "action": "revoke",
+      "hash": "0x9e588cbadfcbc0c4c89c0a87adf93e9976516c3293f41a8902cf8265841caae5",
+      "link": "https://sepolia.etherscan.io/tx/0x9e588cbadfcbc0c4c89c0a87adf93e9976516c3293f41a8902cf8265841caae5"
+    }
+  ]
+}

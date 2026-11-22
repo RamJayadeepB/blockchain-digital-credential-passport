@@ -15,7 +15,9 @@
     "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
     "demo:sepolia": "hardhat run scripts/demo-flow.js --network sepolia",
     "storage:sepolia": "hardhat run scripts/show-storage.js --network sepolia",
-    "metrics:sepolia": "cross-env RUNS=5 hardhat run scripts/metrics.js --network sepolia"
+    "metrics:sepolia": "cross-env RUNS=5 hardhat run scripts/metrics.js --network sepolia",
+    "export-env:local": "hardhat run scripts/export-web-env.js --network localhost",
+    "export-env:sepolia": "hardhat run scripts/export-web-env.js --network sepolia"
   },
   "keywords": [],
   "author": "",

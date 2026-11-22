@@ -1,0 +1,15 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "admin": "0xb707A7851430A651D20A545Cbe2A1bD40269225E",
+  "deployedAt": "2026-11-15T16:18:49.751Z",
+  "contracts": {
+    "IssuerRegistry": "0xC5D6b8ae9B1Df7f2eC4C932a93f957999c1D1D76",
+    "CredentialRegistry": "0x1736990B851760027f2a1154Ba8dE07123C1efC7",
+    "EthereumDIDRegistry": "0x03d5003bf0e79C5F5223588F347ebA39AfbC3818"
+  },
+  "deployGas": {
+    "IssuerRegistry": 3794399,
+    "CredentialRegistry": 2503901
+  }
+}

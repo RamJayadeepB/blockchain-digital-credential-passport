@@ -78,9 +78,22 @@ async function main() {
   console.log("  Student name, roll number, CGPA and the DID itself: these stay in the signed credential (QR / database).");
 
   console.log("\n=== Event log for this credential ===");
-  const from = Number(process.env.FROM_BLOCK || 0);
-  const issued = await ctx.credentialRegistry.queryFilter(ctx.credentialRegistry.filters.CredentialIssued(credHash), from);
-  const revoked = await ctx.credentialRegistry.queryFilter(ctx.credentialRegistry.filters.CredentialRevoked(credHash), from);
+  // Free RPC plans cap eth_getLogs at ~10 blocks per call, so start at the block of the
+  // issue transaction (taken from the demo result) and scan forward in small chunks.
+  let from = Number(process.env.FROM_BLOCK || 0);
+  try {
+    const summary = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "out", `demo-result-${ctx.network}.json`), "utf8"));
+    const rc = await provider.getTransactionReceipt(summary.issueTx);
+    if (rc) from = rc.blockNumber;
+  } catch {}
+  const latest = await provider.getBlockNumber();
+  const issued = [], revoked = [];
+  const CHUNK = 9, MAX_BLOCKS = 600;
+  for (let a = from; a <= Math.min(latest, from + MAX_BLOCKS); a += CHUNK + 1) {
+    const b = Math.min(a + CHUNK, latest);
+    issued.push(...(await ctx.credentialRegistry.queryFilter(ctx.credentialRegistry.filters.CredentialIssued(credHash), a, b)));
+    revoked.push(...(await ctx.credentialRegistry.queryFilter(ctx.credentialRegistry.filters.CredentialRevoked(credHash), a, b)));
+  }
   for (const e of [...issued, ...revoked].sort((a, b) => a.blockNumber - b.blockNumber)) {
     console.log(`  block ${e.blockNumber}  ${e.fragment.name.padEnd(18)} tx ${e.transactionHash}`);
     if (ctx.txLink(e.transactionHash)) console.log(`  ${"".padEnd(30)}${ctx.txLink(e.transactionHash)}`);

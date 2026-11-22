@@ -71,7 +71,8 @@ async function setup(hre, { log = console.log } = {}) {
   const chainId = deployment.chainId;
   const [admin] = await ethers.getSigners();
 
-  const issuerKey = process.env.ISSUER_PRIVATE_KEY || (network.name === "sepolia" ? process.env.DEPLOYER_PRIVATE_KEY : LOCAL_ISSUER_KEY);
+  let issuerKey = process.env.ISSUER_PRIVATE_KEY || (network.name === "sepolia" ? process.env.DEPLOYER_PRIVATE_KEY : LOCAL_ISSUER_KEY);
+  if (!issuerKey.startsWith("0x")) issuerKey = "0x" + issuerKey;
   const issuerWallet = new ethers.Wallet(issuerKey, ethers.provider);
   const issuer = makeIssuer(issuerKey, chainId);
 

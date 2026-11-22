@@ -34,6 +34,7 @@ function makeResolver({ chainId, rpcUrl, provider, didRegistry }) {
 
 /** Build the issuer object did-jwt-vc needs, from a wallet private key. */
 function makeIssuer(privateKey, chainId) {
+  if (!privateKey.startsWith("0x")) privateKey = "0x" + privateKey; // .env keys are often pasted without the prefix
   const wallet = new ethers.Wallet(privateKey);
   return {
     did: didFor(wallet.address, chainId),
