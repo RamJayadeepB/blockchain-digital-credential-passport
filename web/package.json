@@ -1,0 +1,22 @@
+{
+  "name": "credential-passport-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000"
+  },
+  "dependencies": {
+    "did-jwt": "^9.0.3",
+    "did-jwt-vc": "^5.0.2",
+    "did-resolver": "^6.0.0",
+    "ethers": "^6.17.0",
+    "ethr-did-resolver": "^14.1.4",
+    "html5-qrcode": "^2.3.8",
+    "next": "^14.2.35",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

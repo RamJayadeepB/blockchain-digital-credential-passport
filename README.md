@@ -68,6 +68,28 @@ npm run metrics:local     # writes metrics/results-localhost.md
    ```
    Every transaction prints an Etherscan link. After `verify`, Etherscan shows the source code and the **Read Contract** tab.
 
+## Web app (issuer portal, student passport, verifier)
+
+Local chain (needs 3 terminals):
+
+```bash
+cd blockchain
+npm run node                 # terminal 1 (leave running)
+npm run deploy:local         # terminal 2
+npm run export-env:local     # writes web/.env.local (contains the issuer key, never commit)
+cd ../web
+npm install
+npm run build && npm start   # http://localhost:3000
+```
+
+MetaMask for the local chain: add network RPC `http://127.0.0.1:8545`, chain ID `31337`. Import Hardhat account #1 (private key is printed by `npm run node`; it is a public test key) as the university, and any other account as the student.
+
+Sepolia: after `npm run deploy:sepolia` run `npm run export-env:sepolia`, then rebuild the web app.
+
+Pages: `/issuer` (sign + record on-chain, revoke), `/passport` (student signs in with wallet, sees QR), `/verify` (scan, upload or paste; shows checks, on-chain record and raw storage; has a tamper demo button).
+
+Notes: a phone can only scan-and-open the QR if the site is reachable from it, so set `NEXT_PUBLIC_BASE_URL` to your LAN IP or deployed URL. Credentials are kept in `web/data/credentials.json` (swap for Postgres in production; it will not persist on Vercel). Do not run `next dev` and `next start` from the same folder at the same time.
+
 ## Metrics we report
 
 Gas and fee for deploy / issue / revoke, transaction confirmation time, verification time, QR payload size, on-chain bytes per credential, and detection accuracy (genuine, tampered, forged issuer, revoked). See `blockchain/metrics/`.
@@ -93,5 +115,5 @@ blockchain/
 docs/
   CONTRACTS_WALKTHROUGH.md   line-by-line explanation for viva
   DEMO_SCRIPT.md             what to show, in order
-web/              (next) issuer portal, student passport, QR verifier
+web/              Next.js app: issuer portal, student passport, QR verifier
 ```
